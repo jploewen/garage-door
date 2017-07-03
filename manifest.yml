@@ -1,8 +1,8 @@
 applications:
 - disk_quota: 1024M
   buildpack: nodejs_buildpack
-  host: devops-tutorial
-  name: devops-tutorial
+  host: garage-door
+  name: garage-door
   command: node app.js
   path: .
   domain: mybluemix.net
