@@ -1,8 +1,8 @@
 {
-  "name": "devops-tutorial",
+  "name": "garage-door",
   "version": "0.0.5",
   "private": true,
-  "description": "DevOps Tutorial App",
+  "description": "DevOps Garage Door App",
   "scripts": {
     "start": "node app.js",
     "mocha_unit_test_api": "./node_modules/mocha/bin/mocha --recursive --reporter xunit-file test/api/",
