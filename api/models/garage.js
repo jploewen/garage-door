@@ -25,10 +25,11 @@ function getAllGarages() {
 // sample data
 var GARAGES = [{
   id: 6212,
-  name: 'Main door home',
-  lastUpdated: '2017-11-30T14:48:00',
-  desiredState: 'open',
-  status: 'open',
+  name: 'Garage door',
+  lastUpdated: '2017-12-27T21:48:00',
+  desiredState: 'closed',
+  desiredStateTimeStart: '22:00:00',
+  desiredStateTimeEnd: '23:45:00',
 }, {
   id: 6213,
   name: 'Main door home',
