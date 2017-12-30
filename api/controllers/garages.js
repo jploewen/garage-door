@@ -4,7 +4,7 @@
 var garageModel = require ('../models/garage');
 
 module.exports = {
-  garages: garages, getGarage
+  garages: garages, getGarage, updateGarage
 };
 
 /* return a list of garages (garage objects) */
@@ -28,5 +28,15 @@ function getGarage(req, res) {
     var garageId = req.swagger.params.garageId.value;
     var garageData = garageModel.getGarageById(garageId);
     res.json(garageData);
+  }
+};
+  
+/* return a list of garages (garage objects) */
+function updateGarage(req, res) {
+  var body = JSON.parse(req.body);
+  var garageId = body['id'];
+  var garageData = garageModel.getGarageById(garageId);
+  if (garageData != None) {
+    res.json();
   }
 };
