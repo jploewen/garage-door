@@ -34,10 +34,12 @@ function getGarage(req, res) {
 /* return a list of garages (garage objects) */
 function updateGarage(req, res) {
   var body = JSON.parse(req.body);
-  var garageId = body['id'];
+  var garageId = body['garageId'];
   var garageData = garageModel.getGarageById(garageId);
   if (garageData != None) {
     res.statusCode = 201;
     console.log("door id was found");
+  } else {
+    res.statusCode = 404;
   }
 };
