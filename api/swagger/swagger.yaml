@@ -47,7 +47,7 @@ paths:
     get:
       description: Returns a single application to the caller
       # used as the method name of the controller inside applications.js
-      operationId: applications
+      operationId: getApplication
       parameters:
         - name: appId
           in: path
@@ -85,31 +85,6 @@ paths:
           description: Error
           schema:
             $ref: "#/definitions/ErrorResponse"
-  /garages/{garageId}:
-    # Use the house address as the garageId
-    # binds app logic to a route (api/controllers/garages.js)
-    x-swagger-router-controller: garages
-    get:
-      description: Returns a single garage configuration to the caller
-      # used as the method name of the controller inside garages.js
-      operationId: garages
-      parameters:
-        - name: garageId
-          in: path
-          description: returns a garage object for the given id
-          # the path params are explicitly required by the spec
-          required: true
-          type: string
-      responses:
-        "200":
-          description: Successß
-          schema:
-            $ref: "#/definitions/Garage"
-        # responses may fall through to errors
-        default:
-          description: Error
-          schema:
-            $ref: "#/definitions/ErrorResponse"
     put:
       summary: "Update an existing garage object"
       description: "Allows the desired state of the door to be set"
@@ -132,7 +107,7 @@ paths:
         400:
           description: "Invalid ID supplied"
         404:
-          description: "Pet not found"
+          description: "Garage not found"
         405:
           description: "Validation exception"
         default:
@@ -141,6 +116,31 @@ paths:
             $ref: "#/definitions/ErrorResponse"
       #security:
       #- basic_auth:
+  /garages/{garageId}:
+    # Use the house address as the garageId
+    # binds app logic to a route (api/controllers/garages.js)
+    x-swagger-router-controller: garages
+    get:
+      description: Returns a single garage configuration to the caller
+      # used as the method name of the controller inside garages.js
+      operationId: getGarage
+      parameters:
+        - name: garageId
+          in: path
+          description: returns a garage object for the given id
+          # the path params are explicitly required by the spec
+          required: true
+          type: string
+      responses:
+        "200":
+          description: Successß
+          schema:
+            $ref: "#/definitions/Garage"
+        # responses may fall through to errors
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
   /hello:
     # binds app logic to a route (api/controllers/hello_world.js)
     x-swagger-router-controller: hello_world
