@@ -4,7 +4,7 @@
 var garageModel = require ('../models/garage');
 
 module.exports = {
-  garages: garages,
+  garages: garages, getGarage
 };
 
 /* return a list of garages (garage objects) */
@@ -19,4 +19,12 @@ function garages(req, res) {
     var garages = garageModel.getAllGarages();
     res.json(garages);
   }
+  
+  /* return a list of garages (garage objects) */
+function getGarage(req, res) {
+  // variables defined in the Swagger document can be referenced using req.swagger.params.{parameter_name}
+  if (req.swagger.params && req.swagger.params.garageId) {
+    var garageId = req.swagger.params.garageId.value;
+    var garageData = garageModel.getGarageById(garageId);
+    res.json(garageData);
 }
