@@ -37,6 +37,7 @@ function updateGarage(req, res) {
   var garageId = body['id'];
   var garageData = garageModel.getGarageById(garageId);
   if (garageData != None) {
-    res.json();
+    res.statusCode = 201;
+    console.log("door id was found");
   }
 };
