@@ -61,7 +61,7 @@ paths:
           schema:
             $ref: "#/definitions/Application"
         404:
-          description: "Garage not found"
+          description: "Application not found"
         # responses may fall through to errors
         default:
           description: Error
@@ -117,7 +117,7 @@ paths:
         405:
           description: "Validation exception"
         default:
-          description: Error
+          description: "default Error"
           #schema:
           #  $ref: "#/definitions/ErrorResponse"
       #security:
@@ -185,9 +185,9 @@ definitions:
   Garage:
     properties:
       garageId:
-        type: string
-      name:
         type: integer
+      name:
+        type: string
       description:
         type: string
       desiredState:
