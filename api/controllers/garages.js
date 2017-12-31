@@ -27,9 +27,12 @@ function getGarage(req, res) {
   if (req.swagger.params && req.swagger.params.garageId) {
     var garageId = req.swagger.params.garageId.value;
     var garageData = garageModel.getGarageById(garageId);
+    console.log('door id was: ', garageId);
+    /*
     if (garageData != None) {
       console.log("door id was found");
     } 
+    */
     res.json(garageData);
   }
 };
@@ -39,10 +42,13 @@ function updateGarage(req, res) {
   var body = JSON.parse(req.body);
   var garageId = body['garageId'];
   var garageData = garageModel.getGarageById(garageId);
+  console.log('door id was: ', garageId);
+  /*
   if (garageData != None) {
     res.statusCode = 201;
     console.log("door id was found");
   } else {
     res.statusCode = 404;
   }
+  */
 };
