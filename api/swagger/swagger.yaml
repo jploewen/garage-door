@@ -68,7 +68,7 @@ paths:
           schema:
             $ref: "#/definitions/ErrorResponse"
   /garages:
-    # binds app logic to a route (api/controllers/applications.js)
+    # binds app logic to a route (api/controllers/garages.js)
     x-swagger-router-controller: garages
     get:
       description: Returns a list of garages to the caller
@@ -118,8 +118,8 @@ paths:
           description: "Validation exception"
         default:
           description: Error
-          schema:
-            $ref: "#/definitions/ErrorResponse"
+          #schema:
+          #  $ref: "#/definitions/ErrorResponse"
       #security:
       #- basic_auth:
   /garages/{garageId}:
