@@ -27,6 +27,9 @@ function getGarage(req, res) {
   if (req.swagger.params && req.swagger.params.garageId) {
     var garageId = req.swagger.params.garageId.value;
     var garageData = garageModel.getGarageById(garageId);
+    if (garageData != None) {
+      console.log("door id was found");
+    } 
     res.json(garageData);
   }
 };
