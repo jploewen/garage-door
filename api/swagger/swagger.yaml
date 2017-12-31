@@ -56,10 +56,12 @@ paths:
           required: true
           type: string
       responses:
-        "200":
+        200:
           description: Successß
           schema:
             $ref: "#/definitions/Application"
+        404:
+          description: "Garage not found"
         # responses may fall through to errors
         default:
           description: Error
@@ -73,13 +75,15 @@ paths:
       # used as the method name of the controller inside garages.js
       operationId: garages
       responses:
-        "200":
+        200:
           description: Success
           schema:
             type: array
             items:
               # a pointer to a definition
               $ref: "#/definitions/Garage"
+        404:
+          description: "Garage not found"
         # responses may fall through to errors
         default:
           description: Error
