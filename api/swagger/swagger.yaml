@@ -175,7 +175,8 @@ definitions:
   Application:
     properties:
       appId:
-        type: string
+        #type: string
+        type: integer
       name:
         type: string
       description:
