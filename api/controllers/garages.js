@@ -43,6 +43,7 @@ function updateGarage(req, res) {
   var garageId = body['garageId'];
   var garageData = garageModel.getGarageById(garageId);
   console.log('door id was: ', garageId);
+  res.statusCode = 201;
   /*
   if (garageData != None) {
     res.statusCode = 201;
