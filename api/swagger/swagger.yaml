@@ -118,17 +118,22 @@ paths:
       summary: "Update an existing garage object"
       description: "Allows the desired state of the door to be set"
       # used as the method name of the controller inside garages.js
-      operationId: "updateGarage"
+      operationId: updateGarage
       consumes:
       - "application/json"
       parameters:
-      - in: body
-        name: garage
-        description: "Garage object that needs to be updated"
-        required: true
-        schema:
-          type: array
-          $ref: "#/definitions/Garage"
+        - name: garageId
+          in: path
+          description: returns a garage object for the given id
+          # the path params are explicitly required by the spec
+          required: true
+          type: string
+        - in: body
+          name: garage
+          description: "Garage object that needs to be updated"
+          required: true
+          schema:
+            $ref: "#/definitions/Garage"
       responses:
         201:
           description: "Update successful"
@@ -144,6 +149,7 @@ paths:
           #  $ref: "#/definitions/ErrorResponse"
       #security:
       #- basic_auth:
+        
   /hello:
     # binds app logic to a route (api/controllers/hello_world.js)
     x-swagger-router-controller: hello_world
