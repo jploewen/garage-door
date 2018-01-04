@@ -39,11 +39,15 @@ function getGarage(req, res) {
   
 /* return a list of garages (garage objects) */
 function updateGarage(req, res) {
-  var body = JSON.parse(req.body);
-  var garageId = body['garageId'];
+  //var body = JSON.parse(req.body);
+  //var garageId = body['garageId'];
+  var garageId = req.swagger.params.garageId.value;
+  console.log('door id is: ', garageId);
   var garageData = garageModel.getGarageById(garageId);
-  console.log('door id was: ', garageId);
-  res.statusCode = 201;
+  
+  var desiredState = req.body.desiredState
+  console.log('door desired state is: ', desiredState);
+  res.status= 201;
   /*
   if (garageData != None) {
     res.statusCode = 201;
