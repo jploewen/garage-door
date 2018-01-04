@@ -48,9 +48,11 @@ function updateGarage(req, res) {
   console.log('door id was: ', garageId);
 
   var desiredState = req.body.desiredState;
+
   console.log('door desired state is: ', desiredState);
   res.statusCode = 201;
   //res.status(201)
+
   /*
   if (garageData != None) {
     res.statusCode = 201;
