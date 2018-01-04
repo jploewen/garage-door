@@ -48,11 +48,13 @@ function updateGarage(req, res) {
   var desiredState = req.body.desiredState
   console.log('door desired state is: ', desiredState);
   //res.status= 201;
+  /*
   res.status(200).json({
           status: 'success',
           message: 'Updated garage'
         });
-
+  */
+  res.json(garageData);
   /*
   if (garageData != None) {
     res.statusCode = 201;
