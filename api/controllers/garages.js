@@ -54,7 +54,8 @@ function updateGarage(req, res) {
           message: 'Updated garage'
         });
   */
-  res.json(garageData);
+  //res.json(garageData);
+  res.status(201);
   /*
   if (garageData != None) {
     res.statusCode = 201;
