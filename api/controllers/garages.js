@@ -4,7 +4,9 @@
 var garageModel = require ('../models/garage');
 
 module.exports = {
-  garages: garages, getGarage, updateGarage
+  garages: garages, 
+  getGarage: getGarage, 
+  updateGarage: updateGarage
 };
 
 /* return a list of garages (garage objects) */
