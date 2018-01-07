@@ -51,6 +51,7 @@ var config = {
 //if (app.get('env') === 'development') {
 var flag = true;
 if (flag == true) {
+  console.log('Development error handler in use');
   app.use(function(err, req, res, next) {
     res.status(err.status || 500);
     res.render('error', {
