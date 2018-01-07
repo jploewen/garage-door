@@ -49,7 +49,8 @@ var config = {
 // development error handler
 // will print stacktrace
 //if (app.get('env') === 'development') {
-if (True) {
+var flag = true;
+if (flag == true) {
   app.use(function(err, req, res, next) {
     res.status(err.status || 500);
     res.render('error', {
