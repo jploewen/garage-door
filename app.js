@@ -48,9 +48,7 @@ var config = {
 
 // development error handler
 // will print stacktrace
-//if (app.get('env') === 'development') {
-var flag = true;
-if (flag == true) {
+if (app.get('env') === 'development') {
   console.log('Development error handler in use');
   app.use(function(err, req, res, next) {
     res.status(err.status || 500);
@@ -64,10 +62,12 @@ if (flag == true) {
 // production error handler
 // no stacktraces leaked to user
 app.use(function(err, req, res, next) {
+  console.log('Production error handler in use');
   res.status(err.status || 500);
   res.render('error', {
     message: err.message,
-    error: {},
+    //error: {},
+    error: err,
   });
 });
 
