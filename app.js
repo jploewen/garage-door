@@ -57,19 +57,19 @@ if (app.get('env') === 'development') {
       error: err,
     });
   });
-}
-
-// production error handler
-// no stacktraces leaked to user
-app.use(function(err, req, res, next) {
+} else {
   console.log('Production error handler in use');
-  res.status(err.status || 500);
-  res.render('error', {
-    message: err.message,
-    //error: {},
-    error: err,
+  // production error handler
+  // no stacktraces leaked to user
+  app.use(function(err, req, res, next) {
+    res.status(err.status || 500);
+    res.render('error', {
+      message: err.message,
+      //error: {},
+      error: err,
+    });
   });
-});
+}
 
 SwaggerExpress.create(config, function(err, swaggerExpress) {
   if (err) {
