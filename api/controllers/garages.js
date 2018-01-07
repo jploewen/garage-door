@@ -73,4 +73,5 @@ function updateGarage(req, res) {
   //Lets try no ressponse.  Failed with 502 as well
   // Try this format based on artilce https://medium.com/@jeffandersen/building-a-node-js-rest-api-with-express-46b0901f29b6
   res.statusCode = 201;
+  console.log('response status code is: ', 201);
 };
